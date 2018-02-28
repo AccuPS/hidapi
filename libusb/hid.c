@@ -53,6 +53,7 @@
 
 #ifdef __ANDROID__
 
+#if __ANDROID_API__ < 15
 /* Barrier implementation because Android/Bionic don't have pthread_barrier.
    This implementation came from Brent Priddy and was posted on
    StackOverflow. It is used with his permission. */
@@ -109,6 +110,7 @@ static int pthread_barrier_wait(pthread_barrier_t *barrier)
 		return 0;
 	}
 }
+#endif
 
 #endif
 
