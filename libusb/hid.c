@@ -510,6 +510,11 @@ int HID_API_EXPORT hid_init(void)
 	return 0;
 }
 
+struct libusb_context * HID_API_EXPORT hid_get_libusb_context(void)
+{
+	return usb_context;
+}
+
 int HID_API_EXPORT hid_exit(void)
 {
 	if (usb_context) {
