@@ -905,11 +905,11 @@ hid_device * HID_API_EXPORT hid_open_interface(const libusb_device_handle *handl
 				intf_desc = &intf->altsetting[k];
 				if (intf_desc->bInterfaceClass == LIBUSB_CLASS_HID) {
 					/* Open this device */
-					res = libusb_open(usb_dev, &dev->device_handle);
-					if (res < 0) {
-						LOG("can't open device\n");
-						break;
-					}
+//					res = libusb_open(usb_dev, &dev->device_handle);
+//					if (res < 0) {
+//						LOG("can't open device\n");
+//						break;
+//					}
 					good_open = 1;
 	#ifdef DETACH_KERNEL_DRIVER
 					/* Detach the kernel driver, but only if the
