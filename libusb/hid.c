@@ -123,6 +123,7 @@ extern "C" {
 //#else
 //#define LOG(...) do {} while (0)
 //#endif
+#include <android/log.h>
 #define LOG(...) __android_log_print(ANDROID_LOG_ERROR, "HIDAPI",__VA_ARGS__)
 
 #ifndef __FreeBSD__
