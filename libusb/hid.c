@@ -910,6 +910,7 @@ hid_device * HID_API_EXPORT hid_open_interface(const libusb_device_handle *handl
 //						LOG("can't open device\n");
 //						break;
 //					}
+					dev->device_handle = handle;
 					good_open = 1;
 	#ifdef DETACH_KERNEL_DRIVER
 					/* Detach the kernel driver, but only if the
@@ -930,6 +931,8 @@ hid_device * HID_API_EXPORT hid_open_interface(const libusb_device_handle *handl
 						libusb_close(dev->device_handle);
 						good_open = 0;
 						break;
+					} else {
+						LOG("interface claimed");
 					}
 
 					/* Store off the string descriptor indexes */
