@@ -118,11 +118,12 @@ static int pthread_barrier_wait(pthread_barrier_t *barrier)
 extern "C" {
 #endif
 
-#ifdef DEBUG_PRINTF
-#define LOG(...) fprintf(stderr, __VA_ARGS__)
-#else
-#define LOG(...) do {} while (0)
-#endif
+//#ifdef DEBUG_PRINTF
+//#define LOG(...) fprintf(stderr, __VA_ARGS__)
+//#else
+//#define LOG(...) do {} while (0)
+//#endif
+#define LOG(...) __android_log_print(ANDROID_LOG_ERROR, "HIDAPI",__VA_ARGS__)
 
 #ifndef __FreeBSD__
 #define DETACH_KERNEL_DRIVER
