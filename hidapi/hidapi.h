@@ -159,6 +159,8 @@ extern "C" {
 		*/
 		HID_API_EXPORT hid_device * HID_API_CALL hid_open(unsigned short vendor_id, unsigned short product_id, const wchar_t *serial_number);
 
+		HID_API_EXPORT hid_device * HID_API_EXPORT hid_open_interface(const libusb_device_handle *handle, const int interface);
+
 		/** @brief Open a HID device by its path name.
 
 			The path name be determined by calling hid_enumerate(), or a
