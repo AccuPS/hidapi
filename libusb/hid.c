@@ -118,6 +118,7 @@ static int pthread_barrier_wait(pthread_barrier_t *barrier)
 extern "C" {
 #endif
 
+#define DEBUG_PRINTF
 #ifdef DEBUG_PRINTF
 	#ifdef __ANDROID__
 	#include <android/log.h>
